@@ -1,0 +1,14 @@
+---
+layout: layouts/base.html
+title: Blog Page
+---
+
+<div class="flex flex-col justify-between min-h-48 text-center pt-5">
+  <h1 class="text-4xl text-primary">Blogs by Noah Hardy!</h1>
+  <ul>
+    {% for post in collections.posts %}
+      <li><a href="{{post.url}}" class="text-xl pl-4 hover:text-secondary">{{post.data.title}}</a></li>
+    {% endfor %}
+  </ul>
+
+</div>

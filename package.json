@@ -1,0 +1,21 @@
+{
+  "name": "tailwindand11ty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx tailwindcss -i ./src/cssinput/input.css -o ./src/css/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-fetch": "^3.0.0",
+    "daisyui": "^4.7.2",
+    "tailwindcss": "^3.4.1",
+    "common-tags": "^1.8.2"
+  }
+}

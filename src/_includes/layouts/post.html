@@ -1,0 +1,11 @@
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link href="/css/post.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  <h1 class="text-primary text-center pt-5">{{title}}</h1>
+  <h2 class="text-center text-lg pt-2">By: Noah Hardy</h2>
+  <div class="font-serif flex flex-col items-center justify-center text-left">{{content | safe}}</div>
+{% endblock %}

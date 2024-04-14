@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Post 2</title>
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/menu.css" rel="stylesheet">
+<script src="/css/openMenu.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+  
+<link href="/css/post.css" rel="stylesheet">
+
+</head>
+<body class="bg-base-200 flex flex-col min-h-screen" data-theme="dark">
+  <div class="navbar bg-base-100"> <!-- Nav Bar -->
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl" href="/">NoahWebsite:)</a>
+  </div>
+  
+  <div>
+    <button>
+      <label class="swap swap-rotate">
+      
+      <input type="checkbox" onclick="toggleDayNightTheme()"/>
+      <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
+      <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+      
+      </label>
+    </button>
+  </div>
+
+  <div class="flex-none justify even">
+    <button class="btn btn-rectangle btn-ghost mx-3">
+      <a href="/api" >Disney Characters</a>
+    </button>
+    <button class="btn btn-square btn-ghost">
+      <a href="/blogs">Blogs</a>
+    </button>
+    <button class="btn btn-square btn-ghost" onclick="openMenu()">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+  </div>
+</div>
+  
+  
+  <h1 class="text-primary text-center pt-5">Blog Post 2</h1>
+  <h2 class="text-center text-lg pt-2">By: Noah Hardy</h2>
+  <div class="font-serif flex flex-col items-center justify-center text-left"><p>Written 3/11/34</p>
+<br>
+<h2>Intro</h2>
+<p>11ty and TailwindCSS Allow for a fast and easy way to create a static site. Once they are setup, a dev can create much faster
+than with simple HTML and CSS. However, setup can be a bit tricky at times. In this blog, I will give a tutorial on creating and
+using nunjucks components in 11ty + TailwindCSS.</p>
+<br>
+<h2>Code Overview</h2>
+<p>First, you will need to create a new folder to store everything and open it up in a terminal.</p>
+<br>
+<p><img src="../img/newFolder.png" alt="Create a new Folder"></p>
+<p><br><br></p>
+<p>Then, we need to install Eleventy and TailwindCSS. First use these commands to install 11ty:</p>
+<br>
+<pre><code class="language-sh">  npm init -y
+  npm install @11ty/eleventy --save-dev
+</code></pre>
+<br> 
+<p>This should create the following package.json files where important information about our project gets stored:</p>
+<p><img src="../img/packingjson.png" alt="Created JSON files"></p>
+<p><br><br></p>
+<p>11ty setup is now done, but before making our site we want to install TailwindCSS as well.</p>
+<p>To do that, use these commands:</p>
+<br>
+<pre><code class="language-sh">npm install -D tailwindcss
+npx tailwindcss init
+</code></pre>
+<br>
+<p>Which makes the tailwind config file for us:</p>
+<p><img src="../img/tailwindinstall.png" alt="Created Tailwind Config"></p>
+<p><br><br></p>
+<p>Inside that tailwind config, we want to replace the 'content' line with the following:</p>
+<br>
+<pre><code class="language-sh">content: [&quot;./src/**/*.{html,js}&quot;],
+</code></pre>
+<br>
+<p>So that it can read all our project files correctly.</p>
+<p><br><br></p>
+<p>Then, create a new file called 'input.css' inside a folder called 'src' and paste in this code:</p>
+<br>
+<pre><code class="language-sh">@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</code></pre>
+<br>
+<p><img src="../img/inputCSS.png" alt="Create CSS File"></p>
+<p><br><br></p>
+<p>We should now have both 11ty and Tailwind all setup, all that is left to do is get a local server running to view our site,</p>
+<p>and then create a home page where we can use a component.</p>
+<p><br><br></p>
+<h2>Running Local Server</h2>
+<p>In separate terminals, run these two commands in order to automatically update our site with 11ty and Tailwind:</p>
+<br>
+<pre><code class="language-sh">npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+</code></pre>
+<br>
+<pre><code class="language-sh">npx @11ty/eleventy --serve
+</code></pre>
+<p><br><br></p>
+<p>Then, if we create the following simple eleventy.js and index.html files, we can see
+in our browser that everything is working!</p>
+<p><img src="../img/index.png" alt="Create Index.html"></p>
+<br>
+<p><img src="../img/eleventy.png" alt="Create eleventy.js"></p>
+<br>
+<p><img src="../img/helloworld.png" alt="Hello World"></p>
+<br>
+<p>Great! Now all that is left is making our component.</p>
+<p><br><br></p>
+<h2>Creating A Component</h2>
+<p>First, make a folder called '_includes' with a 'components' folder inside it. Then make the js file for your component.
+Mine is called test.js.</p>
+<br>
+<p><img src="../img/testjs.png" alt="component file"></p>
+<br>
+<p>Inside this file, you can put whatever html you want to have as a component. Maybe something
+you will want to use many times throughout your project, so that you can save time
+by not needing to redo any work making the component.</p>
+<br>
+<p>Mine just has a simple header with some text.</p>
+<p><img src="../img/testcode.png" alt="Test.js Code"></p>
+<br>
+<p>We have to add two lines of code to our eleventy.js file to get this to work now.</p>
+<br>
+<pre><code class="language-sh">const Test = require('./src/_includes/components/test');
+</code></pre>
+<br>
+<pre><code class="language-sh">eleventyConfig.addShortcode(&quot;Test&quot;, Test);
+</code></pre>
+<br>
+<p>So that it looks like the following:</p>
+<p><img src="../img/eleventywithComponent.png" alt="New eleventy.js Code"></p>
+<br>
+<p>And now if we add our component to index.html using the nunjucks syntax we see that it is working!</p>
+<br>
+<p>body of index.html:</p>
+<p><img src="../img/componentInIndex.png" alt="New index.html Code"></p>
+<br>
+<p>Our local site shows the text from our component!</p>
+<p><img src="../img/itWorks.png" alt="New site with component working!"></p>
+<p><br><br></p>
+<h2>Conclusion</h2>
+<p>Components can be incredibly useful when making a website. One common example of a component you may want to reuse
+multiple times on different pages is a navbar, so that if you want to make a change you only need to do it in one place.</p>
+<br>
+<p>Hopefully this tutorial was helpful in allowing you to create faster and more efficiently than copying and pasting different
+html pieces on separate pages. Beyond just components though, there are many other things that make 11ty and tailwind great
+choices for creating a static site. Their advantages far outweigh the small amount of setup needed to get a project going.</p>
+<p><br><br></p>
+</div>
+
+
+  <ul id="HamburgerMenu" class="menu bg-neutral-content text-accent-content w-56 rounded-box">
+    <ul>
+      
+        <li><a href="/blog/posts/blog-1/" class="text-xl pl-4 hover:text-secondary">Blog Post 1</a></li>
+      
+        <li><a href="/blog/posts/blog-2/" class="text-xl pl-4 hover:text-secondary">Blog Post 2</a></li>
+      
+    </ul>
+  </ul>
+</body>
+</html>

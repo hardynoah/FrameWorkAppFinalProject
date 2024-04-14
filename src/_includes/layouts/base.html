@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "../basehead.html" %}
+  {% block head %}{% endblock %}
+</head>
+<body class="bg-base-200 flex flex-col min-h-screen" data-theme="dark">
+  {% Navbar %}
+  
+  {% block content %}
+    {{ content | safe }}
+  {% endblock %}
+
+  <ul id="HamburgerMenu" class="menu bg-neutral-content text-accent-content w-56 rounded-box">
+    <ul>
+      {% for post in collections.posts %}
+        <li><a href="{{post.url}}" class="text-xl pl-4 hover:text-secondary">{{post.data.title}}</a></li>
+      {% endfor %}
+    </ul>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,25 @@
+---
+layout: layouts/base.html
+title: "New York Times Top Stories"
+---
+
+<div class="flex flex-col text-center">
+  <h1 class="text-primary text-4xl my-5">Random Disney Characters</h1>
+
+  <h3 id="charName" class="text-secondary text-3xl pt-10 pb-5"></h3>
+  <img id="charImg" src="" class="h-64 object-contain">
+  <p>Appears in:</p>
+  <p id="filmsAndTv"></p>
+  
+  <button class="btn btn-rectangle border-spacing-0 border-neutral-400 w-48 self-center mt-10" onclick="myFunction()">Get a random character
+    <script>
+    function myFunction() {
+      let i = 0;
+      document.getElementById("charName").innerHTML = "{{characters.data[i].name}}";
+      document.getElementById("charImg").src = "{{characters.data[i].imageUrl}}";
+      document.getElementById("filmsAndTv").innerHTML = "{{characters.data[i].films}} + {{characters.data[i].tvShows}}";
+    }
+    </script>
+  </button>
+
+</div>

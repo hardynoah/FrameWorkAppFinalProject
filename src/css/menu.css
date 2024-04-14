@@ -1,0 +1,11 @@
+#HamburgerMenu {
+  display: none;
+  position: absolute;
+  right: 1%;
+  top: 4rem;
+  background-color: aliceblue;
+}
+
+.hamburgerMenuText {
+  font-size: 1rem;
+}
