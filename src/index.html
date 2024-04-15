@@ -3,4 +3,25 @@ layout: layouts/base.html
 title: "11ty Plus Tailwind"
 ---
   
-  {% Test sampleText="This is the main page of my site :)", otherText="Hi HI HI!!!! hello hi" %}
+{% block head %}
+<link href="/css/frontPage.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+{% endblock %}
+
+
+<div class="flex flex-row justify-between">
+  <img class="mainPic" src="/assets/noahPic2.JPEG">
+  <div class="mainText bg-slate-100">
+    <div>
+      <h1 class="pt-5 pb-2">Noah Hardy</h1>
+      <h2 class="major pb-8">Computer Science BS</h2>
+      <h3>Welcome To My Personal Site!<br><br></h3>
+    </div>
+    <div>
+      <a href="/assets/noahResume.pdf"> <button class="btn-resume">Resume</button> </a>
+    </div>
+  </div>
+  <img class="mainPic" src="/assets/noahPic.JPEG">
+</div>

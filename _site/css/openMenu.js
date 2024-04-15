@@ -9,11 +9,10 @@ function openMenu() {
 function toggleDayNightTheme() {
   const body = document.body;
   const currentTheme = body.getAttribute('data-theme');
-  console.log(currentTheme)
 
-  if (currentTheme === 'light') {
+  if (currentTheme === 'nord') {
       body.setAttribute('data-theme', 'dark');
   } else {
-      body.setAttribute('data-theme', 'light');
+      body.setAttribute('data-theme', 'nord');
   }
 }

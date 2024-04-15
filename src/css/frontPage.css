@@ -1,0 +1,72 @@
+:root {
+  --niceBlue: #8097DB;
+  --otherBlue: #2A4494;
+  --purpleMain: #C875EE;
+  --purpleDark: #2F004F;
+  --regBlack: #0B2027;
+  --formWhite: #F2F8F4;
+}
+
+
+img {
+  max-width: 60%;
+}
+
+.mainPic {
+  max-height: 91vh;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.mainText {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  width: 40%;
+  height: 100%;
+  padding: 0 6rem 1rem 6rem;
+  margin: 0 4vw 0 4vw;
+  position: relative;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-self: center;
+  color: #000022;
+  font-family: "Cabin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: italic;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.major {
+  color: var(--purpleMain);
+  font-family: "Cabin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.btn-resume {
+  align-self: center;
+  width: 12rem;
+  padding: 12px;
+  background-color: var(--purpleMain);
+  color: var(--regBlack);
+  font-weight: 900;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: solid var(--purpleDark) 2px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.btn-resume:hover {
+  background-color: var(--purpleDark);
+  color: var(--formWhite);
+}

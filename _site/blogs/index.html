@@ -11,8 +11,8 @@
 <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
   
 </head>
-<body class="bg-base-200 flex flex-col min-h-screen" data-theme="dark">
-  <div class="navbar bg-base-100"> <!-- Nav Bar -->
+<body class="bg-base-800 flex flex-col min-h-screen" data-theme="dark">
+  <div class="navbar bg-base-200"> <!-- Nav Bar -->
   <div class="flex-1">
     <a class="btn btn-ghost text-xl" href="/">NoahWebsite:)</a>
   </div>
@@ -30,12 +30,16 @@
   </div>
 
   <div class="flex-none justify even">
-    <button class="btn btn-rectangle btn-ghost mx-3">
-      <a href="/api" >Disney Characters</a>
-    </button>
-    <button class="btn btn-square btn-ghost">
-      <a href="/blogs">Blogs</a>
-    </button>
+    <a href="/api" >  
+      <button class="btn btn-rectangle btn-ghost mx-3">
+        Disney Characters
+      </button>
+    </a>
+    <a href="/blogs">
+      <button class="btn btn-square btn-ghost">
+        Blogs
+      </button>
+    </a>
     <button class="btn btn-square btn-ghost" onclick="openMenu()">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
     </button>
@@ -44,13 +48,21 @@
   
   
     
+
+
+<link href="/css/blogPage.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+
 <div class="flex flex-col justify-between min-h-48 text-center pt-5">
   <h1 class="text-4xl text-primary">Blogs by Noah Hardy!</h1>
-  <ul>
+  <ul class="min-h-36 flex flex-col justify-around pt-16">
     
-      <li><a href="/blog/posts/blog-1/" class="text-xl pl-4 hover:text-secondary">Blog Post 1</a></li>
+      <li><a href="/blog/posts/blog-1/" class="text-xl py-2 hover:text-secondary">Blog Post 1</a></li>
     
-      <li><a href="/blog/posts/blog-2/" class="text-xl pl-4 hover:text-secondary">Blog Post 2</a></li>
+      <li><a href="/blog/posts/blog-2/" class="text-xl py-2 hover:text-secondary">Blog Post 2</a></li>
     
   </ul>
 

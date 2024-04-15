@@ -4,6 +4,7 @@
   right: 1%;
   top: 4rem;
   background-color: aliceblue;
+  --transition: all .22s ease-in-out;
 }
 
 .hamburgerMenuText {
