@@ -4,7 +4,7 @@ function Navbar() {
   return html`
   <div class="navbar bg-base-200"> <!-- Nav Bar -->
     <div class="flex-1">
-      <a class="btn btn-ghost text-xl" href="/">NoahWebsite:)</a>
+      <a class="btn btn-ghost text-xl" href="/"   onload="loadTheme()">NoahWebsite:)</a>
     </div>
     
     <div>

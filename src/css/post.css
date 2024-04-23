@@ -10,3 +10,18 @@ p {
 h2 {
   padding: 1rem 0;
 }
+
+h3 {
+  color: #F54E00;
+  font-size: 1.25rem;
+}
+
+p > a {
+  color: #6EFAFB;
+}
+
+code {
+  background-color: #DEF0F7;
+  color: black;
+  padding: 8px;
+}

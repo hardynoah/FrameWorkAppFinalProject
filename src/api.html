@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.html
-title: "New York Times Top Stories"
+title: "API Page"
 ---
 
 {% block head %}
@@ -18,15 +18,30 @@ title: "New York Times Top Stories"
   <p>Appears in:</p>
   <p id="filmsAndTv"></p>
   
-  <button class="btn btn-rectangle border-spacing-0 border-neutral-400 w-48 self-center mt-10" onclick="myFunction()">Get a random character
-    <script>
-    function myFunction() {
-      let i = 0;
-      document.getElementById("charName").innerHTML = "{{characters.data[i].name}}";
-      document.getElementById("charImg").src = "{{characters.data[i].imageUrl}}";
-      document.getElementById("filmsAndTv").innerHTML = "{{characters.data[i].films}} + {{characters.data[i].tvShows}}";
-    }
-    </script>
+  <button class="btn btn-rectangle border-spacing-0 border-neutral-400 w-48 self-center mt-10" onclick="getChar()">Get a random character
   </button>
+
+  <script>
+    async function getChar() {
+
+      const url = "https://api.disneyapi.dev/character";
+
+      const response = await fetch(url);
+      const characters = await response.json();
+
+      let i = Math.floor(Math.random() * characters.data.length) + 1;
+
+      document.getElementById("charName").innerText = characters.data[i].name
+      document.getElementById("charImg").src = characters.data[i].imageUrl;
+
+      comma = ''
+      if (characters.data[i].films.length > 0 && characters.data[i].tvShows.length > 0) {
+        comma = ', '
+      }
+      appearances = characters.data[i].films + comma + characters.data[i].tvShows;
+
+      document.getElementById("filmsAndTv").innerHTML = appearances.replace(/,(?=[^\s])/g, ", ");
+    }
+  </script>
 
 </div>

@@ -2,7 +2,7 @@
 layout: layouts/post.html
 title: Blog Post 2
 ---
-Written 3/11/34
+Written 3/11/24
 
 <br>
 

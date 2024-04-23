@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>New York Times Top Stories</title>
+<title>API Page</title>
 <link href="/css/style.css" rel="stylesheet">
 <link href="/css/menu.css" rel="stylesheet">
 <script src="/css/openMenu.js"></script>
@@ -14,7 +14,7 @@
 <body class="bg-base-800 flex flex-col min-h-screen" data-theme="dark">
   <div class="navbar bg-base-200"> <!-- Nav Bar -->
   <div class="flex-1">
-    <a class="btn btn-ghost text-xl" href="/">NoahWebsite:)</a>
+    <a class="btn btn-ghost text-xl" href="/"   onload="loadTheme()">NoahWebsite:)</a>
   </div>
   
   <div>
@@ -63,16 +63,31 @@
   <p>Appears in:</p>
   <p id="filmsAndTv"></p>
   
-  <button class="btn btn-rectangle border-spacing-0 border-neutral-400 w-48 self-center mt-10" onclick="myFunction()">Get a random character
-    <script>
-    function myFunction() {
-      let i = 0;
-      document.getElementById("charName").innerHTML = "";
-      document.getElementById("charImg").src = "";
-      document.getElementById("filmsAndTv").innerHTML = " + ";
-    }
-    </script>
+  <button class="btn btn-rectangle border-spacing-0 border-neutral-400 w-48 self-center mt-10" onclick="getChar()">Get a random character
   </button>
+
+  <script>
+    async function getChar() {
+
+      const url = "https://api.disneyapi.dev/character";
+
+      const response = await fetch(url);
+      const characters = await response.json();
+
+      let i = Math.floor(Math.random() * characters.data.length) + 1;
+
+      document.getElementById("charName").innerText = characters.data[i].name
+      document.getElementById("charImg").src = characters.data[i].imageUrl;
+
+      comma = ''
+      if (characters.data[i].films.length > 0 && characters.data[i].tvShows.length > 0) {
+        comma = ', '
+      }
+      appearances = characters.data[i].films + comma + characters.data[i].tvShows;
+
+      document.getElementById("filmsAndTv").innerHTML = appearances.replace(/,(?=[^\s])/g, ", ");
+    }
+  </script>
 
 </div>
 
@@ -84,6 +99,8 @@
         <li><a href="/blog/posts/blog-1/" class="text-xl pl-4 hover:text-secondary">Blog Post 1</a></li>
       
         <li><a href="/blog/posts/blog-2/" class="text-xl pl-4 hover:text-secondary">Blog Post 2</a></li>
+      
+        <li><a href="/blog/posts/blog-3/" class="text-xl pl-4 hover:text-secondary">Blog Post 3</a></li>
       
     </ul>
   </ul>

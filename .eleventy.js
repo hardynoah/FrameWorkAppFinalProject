@@ -11,6 +11,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/blog/posts/img");
   eleventyConfig.addWatchTarget("src/blog/posts/img");
 
+  eleventyConfig.addPassthroughCopy("src/blog/posts/imgBlog3");
+  eleventyConfig.addWatchTarget("src/blog/posts/imgBlog3");
 
   eleventyConfig.addShortcode("Test", Test);
   eleventyConfig.addShortcode("Navbar", Navbar);
